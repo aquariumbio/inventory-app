@@ -67,7 +67,7 @@ This definition includes some test code that will help you verify it is working 
 6. You should see "\* Listening on tcp://0.0.0.0:3000" in the Debug Console.
 7. Press <kbd>F1</kbd>. Select **Forward a Port** then choose **Forward 3000**.
 8. By browsing http://localhost:3000/ you should see "Yay! You’re on Rails!".
-9. From here, you can add breakpoints or edit the contents of the `test-project` folder to do further testing.
+9. From here, you can add breakpoints or edit the contents of the `inventory` folder to do further testing.
 
 ## License
 

@@ -4,14 +4,14 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "Create test-project",
+            "label": "Create inventory",
             "type": "shell",
-            "command": "rails new test-project -G --skip && cd test-project && bundle install"
-        }, 
+            "command": "rails new inventory -G --skip && cd inventory && bundle install"
+        },
         {
-            "label": "Delete test-project",
+            "label": "Delete inventory",
             "type": "shell",
-            "command": "cd test-project && rm -rf * && rm -f .ruby-version"
-        }, 
-    ], 
+            "command": "cd inventory && rm -rf * && rm -f .ruby-version"
+        },
+    ],
 }
