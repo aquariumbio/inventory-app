@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestProject</title>
+    <title>Inventory</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -11,6 +11,15 @@
   </head>
 
   <body>
-    <%= yield %>
+    <div id="nav-content">
+      <%= link_to 'Samples', samples_path %>
+      <%= link_to 'Sample Types', sample_types_path %>
+      <%= link_to 'Sample Compositions', sample_compositions_path %>
+      <%= link_to 'Sample Composition Types', sample_composition_types_path %>
+    </div>
+
+    <div id="main-content">
+      <%= yield %>
+    </div>
   </body>
 </html>
