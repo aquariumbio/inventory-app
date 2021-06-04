@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root "welcome#index"
+  get 'welcome/index'
   resources :single_items_physical_states
   resources :collection_items
   resources :physical_states
