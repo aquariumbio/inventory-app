@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sample Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sample_types.each do |sample_type| %>
+      <tr>
+        <td><%= sample_type.name %></td>
+        <td><%= sample_type.description %></td>
+        <td><%= link_to 'Show', sample_type %></td>
+        <td><%= link_to 'Edit', edit_sample_type_path(sample_type) %></td>
+        <td><%= link_to 'Destroy', sample_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sample Type', new_sample_type_path %>

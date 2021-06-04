@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Sample Composition Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Recipe</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @sample_composition_types.each do |sample_composition_type| %>
+      <tr>
+        <td><%= sample_composition_type.name %></td>
+        <td><%= sample_composition_type.description %></td>
+        <td><%= sample_composition_type.recipe %></td>
+        <td><%= link_to 'Show', sample_composition_type %></td>
+        <td><%= link_to 'Edit', edit_sample_composition_type_path(sample_composition_type) %></td>
+        <td><%= link_to 'Destroy', sample_composition_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Sample Composition Type', new_sample_composition_type_path %>

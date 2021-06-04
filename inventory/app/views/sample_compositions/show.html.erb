@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @sample_composition.quantity %>
+</p>
+
+<p>
+  <strong>Composite sample:</strong>
+  <%= @sample_composition.composite_sample_id %>
+</p>
+
+<p>
+  <strong>Component sample:</strong>
+  <%= @sample_composition.component_sample_id %>
+</p>
+
+<p>
+  <strong>Sample composition type:</strong>
+  <%= @sample_composition.sample_composition_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_sample_composition_path(@sample_composition) %> |
+<%= link_to 'Back', sample_compositions_path %>

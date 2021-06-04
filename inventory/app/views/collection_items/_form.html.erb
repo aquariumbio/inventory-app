@@ -1,0 +1,37 @@
+<%= form_with(model: collection_item) do |form| %>
+  <% if collection_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(collection_item.errors.count, "error") %> prohibited this collection_item from being saved:</h2>
+
+      <ul>
+        <% collection_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :row %>
+    <%= form.number_field :row %>
+  </div>
+
+  <div class="field">
+    <%= form.label :column %>
+    <%= form.number_field :column %>
+  </div>
+
+  <div class="field">
+    <%= form.label :collection_id %>
+    <%= form.text_field :collection_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :single_item_id %>
+    <%= form.text_field :single_item_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

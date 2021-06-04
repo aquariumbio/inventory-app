@@ -1,0 +1,2 @@
+class PhysicalStateType < ApplicationRecord
+end

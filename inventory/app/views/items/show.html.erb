@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Format:</strong>
+  <%= @item.format_id %>
+</p>
+
+<p>
+  <strong>Format class:</strong>
+  <%= @item.format_class %>
+</p>
+
+<p>
+  <strong>Container:</strong>
+  <%= @item.container_id %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>

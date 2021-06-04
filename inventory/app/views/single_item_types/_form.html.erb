@@ -1,0 +1,27 @@
+<%= form_with(model: single_item_type) do |form| %>
+  <% if single_item_type.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(single_item_type.errors.count, "error") %> prohibited this single_item_type from being saved:</h2>
+
+      <ul>
+        <% single_item_type.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :physical_state_type_id %>
+    <%= form.text_field :physical_state_type_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :sample_type_id %>
+    <%= form.text_field :sample_type_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

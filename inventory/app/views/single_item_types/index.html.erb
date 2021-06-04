@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Single Item Types</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Physical state type</th>
+      <th>Sample type</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @single_item_types.each do |single_item_type| %>
+      <tr>
+        <td><%= single_item_type.physical_state_type_id %></td>
+        <td><%= single_item_type.sample_type_id %></td>
+        <td><%= link_to 'Show', single_item_type %></td>
+        <td><%= link_to 'Edit', edit_single_item_type_path(single_item_type) %></td>
+        <td><%= link_to 'Destroy', single_item_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Single Item Type', new_single_item_type_path %>

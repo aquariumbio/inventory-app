@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @container.quantity %>
+</p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @container.location %>
+</p>
+
+<p>
+  <strong>Container type:</strong>
+  <%= @container.container_type_id %>
+</p>
+
+<%= link_to 'Edit', edit_container_path(@container) %> |
+<%= link_to 'Back', containers_path %>

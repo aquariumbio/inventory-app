@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @container_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @container_type.description %>
+</p>
+
+<p>
+  <strong>Size:</strong>
+  <%= @container_type.size %>
+</p>
+
+<%= link_to 'Edit', edit_container_type_path(@container_type) %> |
+<%= link_to 'Back', container_types_path %>

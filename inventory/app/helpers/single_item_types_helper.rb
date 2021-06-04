@@ -1,0 +1,2 @@
+module SingleItemTypesHelper
+end

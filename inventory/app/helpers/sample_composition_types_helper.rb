@@ -1,0 +1,2 @@
+module SampleCompositionTypesHelper
+end

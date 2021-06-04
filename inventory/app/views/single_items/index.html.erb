@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Single Items</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Sample</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @single_items.each do |single_item| %>
+      <tr>
+        <td><%= single_item.sample_id %></td>
+        <td><%= link_to 'Show', single_item %></td>
+        <td><%= link_to 'Edit', edit_single_item_path(single_item) %></td>
+        <td><%= link_to 'Destroy', single_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Single Item', new_single_item_path %>

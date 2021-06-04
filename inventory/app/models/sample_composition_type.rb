@@ -1,0 +1,2 @@
+class SampleCompositionType < ApplicationRecord
+end

@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  quantity: MyText
+  composite_sample_id: 1
+  component_sample_id: 1
+  sample_composition_type: one
+
+two:
+  quantity: MyText
+  composite_sample_id: 1
+  component_sample_id: 1
+  sample_composition_type: two

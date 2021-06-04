@@ -1,0 +1,22 @@
+<%= form_with(model: single_item) do |form| %>
+  <% if single_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(single_item.errors.count, "error") %> prohibited this single_item from being saved:</h2>
+
+      <ul>
+        <% single_item.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :sample_id %>
+    <%= form.text_field :sample_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

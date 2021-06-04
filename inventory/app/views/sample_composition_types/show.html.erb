@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @sample_composition_type.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sample_composition_type.description %>
+</p>
+
+<p>
+  <strong>Recipe:</strong>
+  <%= @sample_composition_type.recipe %>
+</p>
+
+<%= link_to 'Edit', edit_sample_composition_type_path(@sample_composition_type) %> |
+<%= link_to 'Back', sample_composition_types_path %>

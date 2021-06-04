@@ -1,0 +1,1 @@
+json.partial! "single_items_physical_states/single_items_physical_state", single_items_physical_state: @single_items_physical_state
