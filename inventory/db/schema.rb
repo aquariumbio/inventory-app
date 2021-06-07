@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_190631) do
+ActiveRecord::Schema.define(version: 2021_06_07_191109) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "row"
@@ -136,12 +136,12 @@ ActiveRecord::Schema.define(version: 2021_06_04_190631) do
   end
 
   create_table "single_items_physical_states", force: :cascade do |t|
-    t.integer "item_id", null: false
+    t.integer "single_item_id", null: false
     t.integer "physical_state_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_single_items_physical_states_on_item_id"
     t.index ["physical_state_id"], name: "index_single_items_physical_states_on_physical_state_id"
+    t.index ["single_item_id"], name: "index_single_items_physical_states_on_single_item_id"
   end
 
   add_foreign_key "collection_items", "collections"
@@ -155,6 +155,6 @@ ActiveRecord::Schema.define(version: 2021_06_04_190631) do
   add_foreign_key "single_item_types", "physical_state_types"
   add_foreign_key "single_item_types", "sample_types"
   add_foreign_key "single_items", "samples"
-  add_foreign_key "single_items_physical_states", "items"
+  add_foreign_key "single_items_physical_states", "items", column: "single_item_id"
   add_foreign_key "single_items_physical_states", "physical_states"
 end

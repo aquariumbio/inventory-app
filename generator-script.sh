@@ -51,4 +51,4 @@ rails generate scaffold collection_item \
     collection:belongs_to single_item:belongs_to
 
 rails generate scaffold single_items_physical_state \
-    item:belongs_to physical_state:belongs_to
+    single_item:belongs_to physical_state:belongs_to
