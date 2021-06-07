@@ -1,3 +1,4 @@
+<% title 'Physical States' %>
 <p id="notice"><%= notice %></p>
 
 <h1>Physical States</h1>
@@ -17,7 +18,7 @@
       <tr>
         <td><%= physical_state.name %></td>
         <td><%= physical_state.description %></td>
-        <td><%= physical_state.physical_state_type_id %></td>
+        <td><%= physical_state.physical_state_type.name %></td>
         <td><%= link_to 'Show', physical_state %></td>
         <td><%= link_to 'Edit', edit_physical_state_path(physical_state) %></td>
         <td><%= link_to 'Destroy', physical_state, method: :delete, data: { confirm: 'Are you sure?' } %></td>
