@@ -16,14 +16,20 @@
   <body>
     <div id="nav-content">
       <div>
-        <%= link_to 'Samples', samples_path %>
-        <%= link_to 'Sample Types', sample_types_path %>
-        <%= link_to 'Sample Compositions', sample_compositions_path %>
+        <b>Samples:</b>
+        <%= link_to 'Samples', samples_path %> ·
+        <%= link_to 'Sample Types', sample_types_path %> ·
+        <%= link_to 'Sample Compositions', sample_compositions_path %> ·
         <%= link_to 'Sample Composition Types', sample_composition_types_path %>
       </div>
       <div>
-        <%= link_to 'Physical States', physical_states_path %>
+        <b>Physical States:</b>
+        <%= link_to 'Physical States', physical_states_path %> ·
         <%= link_to 'Physical State Types', physical_state_types_path %>
+      </div>
+      <div>
+        <b>Items:</b>
+        <%= link_to 'Single Items', single_items_path %>
       </div>
     </div>
 
