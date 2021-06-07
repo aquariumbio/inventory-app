@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_07_191109) do
+ActiveRecord::Schema.define(version: 2021_06_07_200753) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "row"
@@ -155,6 +155,6 @@ ActiveRecord::Schema.define(version: 2021_06_07_191109) do
   add_foreign_key "single_item_types", "physical_state_types"
   add_foreign_key "single_item_types", "sample_types"
   add_foreign_key "single_items", "samples"
-  add_foreign_key "single_items_physical_states", "items", column: "single_item_id"
   add_foreign_key "single_items_physical_states", "physical_states"
+  add_foreign_key "single_items_physical_states", "single_items"
 end
