@@ -2,12 +2,12 @@
 
 <p>
   <strong>Item:</strong>
-  <%= @single_items_physical_state.item_id %>
+  <%= @single_items_physical_state.single_item_id %>
 </p>
 
 <p>
   <strong>Physical state:</strong>
-  <%= @single_items_physical_state.physical_state_id %>
+  <%= @single_items_physical_state.physical_state.name %>
 </p>
 
 <%= link_to 'Edit', edit_single_items_physical_state_path(@single_items_physical_state) %> |

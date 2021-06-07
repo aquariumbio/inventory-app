@@ -64,6 +64,6 @@ class SingleItemsPhysicalStatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def single_items_physical_state_params
-      params.require(:single_items_physical_state).permit(:item_id, :physical_state_id)
+      params.require(:single_items_physical_state).permit(:single_item_id, :physical_state_id)
     end
 end
