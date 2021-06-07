@@ -18,17 +18,17 @@
 
   <div class="field">
     <%= form.label :composite_sample_id %>
-    <%= form.number_field :composite_sample_id %>
+    <%= form.collection_select(:composite_sample_id, Sample.all, :id, :name) %>
   </div>
 
   <div class="field">
     <%= form.label :component_sample_id %>
-    <%= form.number_field :component_sample_id %>
+    <%= form.collection_select(:component_sample_id, Sample.all, :id, :name) %>
   </div>
 
   <div class="field">
     <%= form.label :sample_composition_type_id %>
-    <%= form.text_field :sample_composition_type_id %>
+    <%= form.collection_select(:sample_composition_type_id, SampleCompositionType.all, :id, :name) %>
   </div>
 
   <div class="actions">

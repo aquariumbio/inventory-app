@@ -3,7 +3,7 @@ class SampleCompositionsController < ApplicationController
 
   # GET /sample_compositions or /sample_compositions.json
   def index
-    @sample_compositions = SampleComposition.all
+    @grouped_sample_compositions = SampleComposition.all.group_by { |c| c.grouper }
   end
 
   # GET /sample_compositions/1 or /sample_compositions/1.json

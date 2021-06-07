@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :sample_type_id %>
-    <%= form.text_field :sample_type_id %>
+    <%= form.collection_select(:sample_type_id, SampleType.all, :id, :name) %>
   </div>
 
   <div class="actions">
