@@ -2,10 +2,10 @@
 
 one:
   format_type_id: 1
-  format_type_class: MyString
+  format_type_type: MyString
   container_type: one
 
 two:
   format_type_id: 1
-  format_type_class: MyString
+  format_type_type: MyString
   container_type: two

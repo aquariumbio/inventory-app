@@ -20,6 +20,18 @@
     <%= form.label :description %>
     <%= form.text_area :description %>
   </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :rows %>
+    <%= form.number_field :rows, step: 1 %>
+  </div>
+  </div>
+
+  <div class="field">
+    <%= form.label :columns %>
+    <%= form.number_field :columns, step: 1 %>
+  </div>
 
   <div class="actions">
     <%= form.submit %>

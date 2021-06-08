@@ -64,6 +64,6 @@ class ItemTypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def item_type_params
-      params.require(:item_type).permit(:format_type_id, :format_type_class, :container_type_id)
+      params.require(:item_type).permit(:format_type_id, :format_type_type, :container_type_id)
     end
 end

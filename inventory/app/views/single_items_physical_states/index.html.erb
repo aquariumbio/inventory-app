@@ -14,8 +14,8 @@
   <tbody>
     <% @single_items_physical_states.each do |single_items_physical_state| %>
       <tr>
-        <td><%= single_items_physical_state.item_id %></td>
-        <td><%= single_items_physical_state.physical_state_id %></td>
+        <td><%= single_items_physical_state.single_item_id %></td>
+        <td><%= single_items_physical_state.physical_state.name %></td>
         <td><%= link_to 'Show', single_items_physical_state %></td>
         <td><%= link_to 'Edit', edit_single_items_physical_state_path(single_items_physical_state) %></td>
         <td><%= link_to 'Destroy', single_items_physical_state, method: :delete, data: { confirm: 'Are you sure?' } %></td>

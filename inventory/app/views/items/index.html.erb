@@ -16,7 +16,7 @@
     <% @items.each do |item| %>
       <tr>
         <td><%= item.format_id %></td>
-        <td><%= item.format_class %></td>
+        <td><%= item.format_type %></td>
         <td><%= item.container_id %></td>
         <td><%= link_to 'Show', item %></td>
         <td><%= link_to 'Edit', edit_item_path(item) %></td>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_04_190631) do
+ActiveRecord::Schema.define(version: 2021_06_08_213921) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "row"
@@ -28,11 +28,15 @@ ActiveRecord::Schema.define(version: 2021_06_04_190631) do
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "rows"
+    t.integer "columns"
   end
 
   create_table "collections", force: :cascade do |t|
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "collection_type_id"
+    t.index ["collection_type_id"], name: "index_collections_on_collection_type_id"
   end
 
   create_table "container_types", force: :cascade do |t|
@@ -54,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_190631) do
 
   create_table "item_types", force: :cascade do |t|
     t.integer "format_type_id"
-    t.string "format_type_class"
+    t.string "format_type_type"
     t.integer "container_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -63,7 +67,7 @@ ActiveRecord::Schema.define(version: 2021_06_04_190631) do
 
   create_table "items", force: :cascade do |t|
     t.integer "format_id"
-    t.string "format_class"
+    t.string "format_type"
     t.integer "container_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -136,16 +140,17 @@ ActiveRecord::Schema.define(version: 2021_06_04_190631) do
   end
 
   create_table "single_items_physical_states", force: :cascade do |t|
-    t.integer "item_id", null: false
+    t.integer "single_item_id", null: false
     t.integer "physical_state_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["item_id"], name: "index_single_items_physical_states_on_item_id"
     t.index ["physical_state_id"], name: "index_single_items_physical_states_on_physical_state_id"
+    t.index ["single_item_id"], name: "index_single_items_physical_states_on_single_item_id"
   end
 
   add_foreign_key "collection_items", "collections"
   add_foreign_key "collection_items", "single_items"
+  add_foreign_key "collections", "collection_types"
   add_foreign_key "containers", "container_types"
   add_foreign_key "item_types", "container_types"
   add_foreign_key "items", "containers"
@@ -155,6 +160,6 @@ ActiveRecord::Schema.define(version: 2021_06_04_190631) do
   add_foreign_key "single_item_types", "physical_state_types"
   add_foreign_key "single_item_types", "sample_types"
   add_foreign_key "single_items", "samples"
-  add_foreign_key "single_items_physical_states", "items"
   add_foreign_key "single_items_physical_states", "physical_states"
+  add_foreign_key "single_items_physical_states", "single_items"
 end

@@ -2,7 +2,11 @@
 
 <p>
   <strong>Sample:</strong>
-  <%= @single_item.sample_id %>
+  <%= @single_item.sample.name %>
+</p>
+<p>
+  <strong>Physical States:</strong>
+  <%= @single_item.physical_states.map(&:name).join(', ') %>
 </p>
 
 <%= link_to 'Edit', edit_single_item_path(@single_item) %> |

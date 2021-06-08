@@ -15,7 +15,7 @@ class ItemsTest < ApplicationSystemTestCase
     click_on "New Item"
 
     fill_in "Container", with: @item.container_id
-    fill_in "Format class", with: @item.format_class
+    fill_in "Format class", with: @item.format_type
     fill_in "Format", with: @item.format_id
     click_on "Create Item"
 
@@ -28,7 +28,7 @@ class ItemsTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Container", with: @item.container_id
-    fill_in "Format class", with: @item.format_class
+    fill_in "Format class", with: @item.format_type
     fill_in "Format", with: @item.format_id
     click_on "Update Item"
 

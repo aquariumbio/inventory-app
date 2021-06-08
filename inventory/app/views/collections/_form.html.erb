@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :collection_type_id %>
+    <%= form.collection_select(:collection_type_id, CollectionType.all, :id, :name) %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

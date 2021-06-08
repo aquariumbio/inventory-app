@@ -15,7 +15,7 @@ class ItemTypesTest < ApplicationSystemTestCase
     click_on "New Item Type"
 
     fill_in "Container type", with: @item_type.container_type_id
-    fill_in "Format type class", with: @item_type.format_type_class
+    fill_in "Format type class", with: @item_type.format_type_type
     fill_in "Format type", with: @item_type.format_type_id
     click_on "Create Item type"
 
@@ -28,7 +28,7 @@ class ItemTypesTest < ApplicationSystemTestCase
     click_on "Edit", match: :first
 
     fill_in "Container type", with: @item_type.container_type_id
-    fill_in "Format type class", with: @item_type.format_type_class
+    fill_in "Format type class", with: @item_type.format_type_type
     fill_in "Format type", with: @item_type.format_type_id
     click_on "Update Item type"
 

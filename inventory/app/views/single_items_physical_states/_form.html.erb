@@ -12,13 +12,13 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :item_id %>
-    <%= form.text_field :item_id %>
+    <%= form.label :single_item_id %>
+    <%= form.text_field :single_item_id %>
   </div>
 
   <div class="field">
     <%= form.label :physical_state_id %>
-    <%= form.text_field :physical_state_id %>
+    <%= form.collection_select(:physical_state_id, PhysicalState.all, :id, :name) %>
   </div>
 
   <div class="actions">
