@@ -10,5 +10,15 @@
   <%= @collection_type.description %>
 </p>
 
+<p>
+  <strong>Rows:</strong>
+  <%= @collection_type.rows %>
+</p>
+
+<p>
+  <strong>Columns:</strong>
+  <%= @collection_type.columns %>
+</p>
+
 <%= link_to 'Edit', edit_collection_type_path(@collection_type) %> |
 <%= link_to 'Back', collection_types_path %>

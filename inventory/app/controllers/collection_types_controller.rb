@@ -64,6 +64,6 @@ class CollectionTypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def collection_type_params
-      params.require(:collection_type).permit(:name, :description)
+      params.require(:collection_type).permit(:name, :description, :rows, :columns)
     end
 end
