@@ -23,18 +23,28 @@
         <%= link_to 'Sample Composition Types', sample_composition_types_path %>
       </div>
       <div>
-        <b>Physical States:</b>
-        <%= link_to 'Physical States', physical_states_path %> ·
-        <%= link_to 'Physical State Types', physical_state_types_path %>
+        <b>Sample Inventory:</b>
+        <%= link_to 'Items', items_path %> ·
+        <%= link_to 'Item Types', item_types_path %> ·
+        <%= link_to 'Containers', containers_path %> ·
+        <%= link_to 'Container Types', container_types_path %>
       </div>
       <div>
-        <b>Items:</b>
-        <%= link_to 'Single Items', single_items_path %> ·
-        <%= link_to 'Single Items Physical States', single_items_physical_states_path %> ·
+        <b>Physical States:</b>
+        <%= link_to 'Physical States', physical_states_path %> ·
+        <%= link_to 'Physical State Types', physical_state_types_path %> ·
+        <%= link_to 'Single Items Physical States', single_items_physical_states_path %>
+      </div>
+      <div>
+        <b>Formats:</b>
         <%= link_to 'Collections', collections_path %> ·
-        <%= link_to 'Collection Types', collection_types_path %> ·
+        <%= link_to 'Single Items', single_items_path %> ·
         <%= link_to 'Collection Items', collection_items_path %>
       </div>
+      <div>
+        <b>Format Types:</b>
+        <%= link_to 'Single Item Types', single_item_types_path %> ·
+        <%= link_to 'Collection Types', collection_types_path %>
       </div>
     </div>
 

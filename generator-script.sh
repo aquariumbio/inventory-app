@@ -18,7 +18,7 @@ rails generate scaffold single_item \
     sample:belongs_to
 
 rails generate scaffold item \
-    format_id:integer format_class:string \
+    format_id:integer format_type:string \
     container:belongs_to
 
 rails generate scaffold physical_state_type \
