@@ -31,7 +31,7 @@ rails generate scaffold collection_type \
     name:string description:text
 
 rails generate scaffold item_type \
-    format_type_id:integer format_type_class:string \
+    format_type_id:integer format_type_type:string \
     container_type:belongs_to
 
 rails generate scaffold sample_composition_type \

@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :container_type_id %>
-    <%= form.text_field :container_type_id %>
+    <%= form.collection_select(:container_type_id, ContainerType.all, :id, :name) %>
   </div>
 
   <div class="actions">

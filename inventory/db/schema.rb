@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_211551) do
+ActiveRecord::Schema.define(version: 2021_06_08_213921) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "row"
@@ -58,7 +58,7 @@ ActiveRecord::Schema.define(version: 2021_06_08_211551) do
 
   create_table "item_types", force: :cascade do |t|
     t.integer "format_type_id"
-    t.string "format_type_class"
+    t.string "format_type_type"
     t.integer "container_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
