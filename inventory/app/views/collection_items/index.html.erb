@@ -5,10 +5,10 @@
 <table>
   <thead>
     <tr>
-      <th>Row</th>
-      <th>Column</th>
       <th>Collection</th>
       <th>Single item</th>
+      <th>Row</th>
+      <th>Column</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -16,10 +16,10 @@
   <tbody>
     <% @collection_items.each do |collection_item| %>
       <tr>
+        <td><%= "#{collection_item.collection_id}: #{collection_item.collection.collection_type.name}" %></td>
+        <td><%= "#{collection_item.single_item_id}: #{collection_item.single_item.sample.name}" %></td>
         <td><%= collection_item.row %></td>
         <td><%= collection_item.column %></td>
-        <td><%= collection_item.collection_id %></td>
-        <td><%= collection_item.single_item_id %></td>
         <td><%= link_to 'Show', collection_item %></td>
         <td><%= link_to 'Edit', edit_collection_item_path(collection_item) %></td>
         <td><%= link_to 'Destroy', collection_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
