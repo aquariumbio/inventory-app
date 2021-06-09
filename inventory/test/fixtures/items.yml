@@ -1,11 +1,11 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  format_id: 1
-  format_type: MyString
+  format: one
+  format_type: SingleItem
   container: one
 
 two:
-  format_id: 1
-  format_type: MyString
+  format: one
+  format_type: Collection
   container: two
