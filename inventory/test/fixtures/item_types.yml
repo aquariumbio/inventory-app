@@ -2,10 +2,10 @@
 
 one:
   format_type_id: 1
-  format_type_type: MyString
+  format_type_type: SingleItemType
   container_type: one
 
 two:
   format_type_id: 1
-  format_type_type: MyString
+  format_type_type: CollectionType
   container_type: two
