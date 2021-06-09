@@ -9,7 +9,6 @@ Rails.application.routes.draw do
   resources :item_types
   resources :collection_types
   resources :single_item_types
-  resources :physical_state_types
   resources :items
   resources :single_items
   resources :samples

@@ -64,6 +64,6 @@ class PhysicalStatesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def physical_state_params
-      params.require(:physical_state).permit(:name, :description, :physical_state_type_id)
+      params.require(:physical_state).permit(:name, :description)
     end
 end

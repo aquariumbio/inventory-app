@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_08_213921) do
+ActiveRecord::Schema.define(version: 2021_06_09_210739) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "row"
@@ -74,19 +74,11 @@ ActiveRecord::Schema.define(version: 2021_06_08_213921) do
     t.index ["container_id"], name: "index_items_on_container_id"
   end
 
-  create_table "physical_state_types", force: :cascade do |t|
-    t.string "name"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "physical_states", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.integer "physical_state_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["physical_state_type_id"], name: "index_physical_states_on_physical_state_type_id"
   end
 
   create_table "sample_composition_types", force: :cascade do |t|
@@ -124,11 +116,9 @@ ActiveRecord::Schema.define(version: 2021_06_08_213921) do
   end
 
   create_table "single_item_types", force: :cascade do |t|
-    t.integer "physical_state_type_id", null: false
     t.integer "sample_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["physical_state_type_id"], name: "index_single_item_types_on_physical_state_type_id"
     t.index ["sample_type_id"], name: "index_single_item_types_on_sample_type_id"
   end
 
@@ -154,10 +144,8 @@ ActiveRecord::Schema.define(version: 2021_06_08_213921) do
   add_foreign_key "containers", "container_types"
   add_foreign_key "item_types", "container_types"
   add_foreign_key "items", "containers"
-  add_foreign_key "physical_states", "physical_state_types"
   add_foreign_key "sample_compositions", "sample_composition_types"
   add_foreign_key "samples", "sample_types"
-  add_foreign_key "single_item_types", "physical_state_types"
   add_foreign_key "single_item_types", "sample_types"
   add_foreign_key "single_items", "samples"
   add_foreign_key "single_items_physical_states", "physical_states"

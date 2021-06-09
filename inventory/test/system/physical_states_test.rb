@@ -16,7 +16,6 @@ class PhysicalStatesTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @physical_state.description
     fill_in "Name", with: @physical_state.name
-    fill_in "Physical state type", with: @physical_state.physical_state_type_id
     click_on "Create Physical state"
 
     assert_text "Physical state was successfully created"
@@ -29,7 +28,6 @@ class PhysicalStatesTest < ApplicationSystemTestCase
 
     fill_in "Description", with: @physical_state.description
     fill_in "Name", with: @physical_state.name
-    fill_in "Physical state type", with: @physical_state.physical_state_type_id
     click_on "Update Physical state"
 
     assert_text "Physical state was successfully updated"

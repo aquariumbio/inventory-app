@@ -1,9 +1,7 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  physical_state_type: one
   sample_type: one
 
 two:
-  physical_state_type: two
   sample_type: two

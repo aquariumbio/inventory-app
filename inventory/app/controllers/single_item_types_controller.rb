@@ -64,6 +64,6 @@ class SingleItemTypesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def single_item_type_params
-      params.require(:single_item_type).permit(:physical_state_type_id, :sample_type_id)
+      params.require(:single_item_type).permit(:sample_type_id)
     end
 end

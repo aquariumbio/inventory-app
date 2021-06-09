@@ -21,11 +21,8 @@ rails generate scaffold item \
     format_id:integer format_type:string \
     container:belongs_to
 
-rails generate scaffold physical_state_type \
-    name:string
-
 rails generate scaffold single_item_type \
-    physical_state_type:belongs_to sample_type:belongs_to
+    sample_type:belongs_to
 
 rails generate scaffold collection_type \
     name:string description:text
@@ -43,8 +40,7 @@ rails generate scaffold sample_composition \
     sample_composition_type:belongs_to
 
 rails generate scaffold physical_state \
-    name:string description:text \
-    physical_state_type:belongs_to
+    name:string description:text
 
 rails generate scaffold collection_item \
     row:integer column:integer \

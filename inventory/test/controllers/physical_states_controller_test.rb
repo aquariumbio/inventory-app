@@ -17,7 +17,7 @@ class PhysicalStatesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create physical_state" do
     assert_difference('PhysicalState.count') do
-      post physical_states_url, params: { physical_state: { description: @physical_state.description, name: @physical_state.name, physical_state_type_id: @physical_state.physical_state_type_id } }
+      post physical_states_url, params: { physical_state: { description: @physical_state.description, name: @physical_state.name } }
     end
 
     assert_redirected_to physical_state_url(PhysicalState.last)
@@ -34,7 +34,7 @@ class PhysicalStatesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update physical_state" do
-    patch physical_state_url(@physical_state), params: { physical_state: { description: @physical_state.description, name: @physical_state.name, physical_state_type_id: @physical_state.physical_state_type_id } }
+    patch physical_state_url(@physical_state), params: { physical_state: { description: @physical_state.description, name: @physical_state.name } }
     assert_redirected_to physical_state_url(@physical_state)
   end
 
