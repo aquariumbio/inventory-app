@@ -2,12 +2,12 @@
 
 one:
   quantity: MyText
-  composite_sample_id: 1
-  component_sample_id: 1
+  composite_sample: one
+  component_sample: two
   sample_composition_type: one
 
 two:
   quantity: MyText
-  composite_sample_id: 1
-  component_sample_id: 1
+  composite_sample: one
+  component_sample: two
   sample_composition_type: two

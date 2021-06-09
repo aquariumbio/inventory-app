@@ -17,7 +17,7 @@ class SingleItemsPhysicalStatesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create single_items_physical_state" do
     assert_difference('SingleItemsPhysicalState.count') do
-      post single_items_physical_states_url, params: { single_items_physical_state: { item_id: @single_items_physical_state.item_id, physical_state_id: @single_items_physical_state.physical_state_id } }
+      post single_items_physical_states_url, params: { single_items_physical_state: { single_item_id: @single_items_physical_state.single_item_id, physical_state_id: @single_items_physical_state.physical_state_id } }
     end
 
     assert_redirected_to single_items_physical_state_url(SingleItemsPhysicalState.last)
@@ -34,7 +34,7 @@ class SingleItemsPhysicalStatesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update single_items_physical_state" do
-    patch single_items_physical_state_url(@single_items_physical_state), params: { single_items_physical_state: { item_id: @single_items_physical_state.item_id, physical_state_id: @single_items_physical_state.physical_state_id } }
+    patch single_items_physical_state_url(@single_items_physical_state), params: { single_items_physical_state: { single_item_id: @single_items_physical_state.single_item_id, physical_state_id: @single_items_physical_state.physical_state_id } }
     assert_redirected_to single_items_physical_state_url(@single_items_physical_state)
   end
 
