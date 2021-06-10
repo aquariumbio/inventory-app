@@ -6,10 +6,8 @@ Rails.application.routes.draw do
   resources :physical_states
   resources :sample_compositions
   resources :sample_composition_types
-  resources :item_types
   resources :collection_types
   resources :single_item_types
-  resources :items
   resources :single_items
   resources :samples
   resources :sample_types

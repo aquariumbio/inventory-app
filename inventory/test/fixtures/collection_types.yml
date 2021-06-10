@@ -3,7 +3,11 @@
 one:
   name: MyString
   description: MyText
+  rows: 1
+  columns: 1
 
 two:
   name: MyString
   description: MyText
+  rows: 1
+  columns: 1

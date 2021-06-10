@@ -17,7 +17,7 @@ class CollectionTypesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create collection_type" do
     assert_difference('CollectionType.count') do
-      post collection_types_url, params: { collection_type: { description: @collection_type.description, name: @collection_type.name } }
+      post collection_types_url, params: { collection_type: { description: @collection_type.description, name: @collection_type.name, rows: @collection_type.rows, columns: @collection_type.columns } }
     end
 
     assert_redirected_to collection_type_url(CollectionType.last)
@@ -34,7 +34,7 @@ class CollectionTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update collection_type" do
-    patch collection_type_url(@collection_type), params: { collection_type: { description: @collection_type.description, name: @collection_type.name } }
+    patch collection_type_url(@collection_type), params: { collection_type: { description: @collection_type.description, name: @collection_type.name, rows: @collection_type.rows, columns: @collection_type.columns } }
     assert_redirected_to collection_type_url(@collection_type)
   end
 

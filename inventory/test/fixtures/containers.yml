@@ -4,8 +4,12 @@ one:
   quantity: MyText
   location: MyText
   container_type: one
+  format: one
+  format_type: SingleItem
 
 two:
   quantity: MyText
   location: MyText
-  container_type: two
+  container_type: one
+  format: two
+  format_type: Collection

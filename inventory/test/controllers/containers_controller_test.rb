@@ -17,7 +17,7 @@ class ContainersControllerTest < ActionDispatch::IntegrationTest
 
   test "should create container" do
     assert_difference('Container.count') do
-      post containers_url, params: { container: { container_type_id: @container.container_type_id, location: @container.location, quantity: @container.quantity } }
+      post containers_url, params: { container: { container_type_id: @container.container_type_id, location: @container.location, quantity: @container.quantity, format_id: @container.format_id, format_type: @container.format_type } }
     end
 
     assert_redirected_to container_url(Container.last)
@@ -34,7 +34,7 @@ class ContainersControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update container" do
-    patch container_url(@container), params: { container: { container_type_id: @container.container_type_id, location: @container.location, quantity: @container.quantity } }
+    patch container_url(@container), params: { container: { container_type_id: @container.container_type_id, location: @container.location, quantity: @container.quantity, format_id: @container.format_id, format_type: @container.format_type } }
     assert_redirected_to container_url(@container)
   end
 

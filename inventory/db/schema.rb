@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_11_155748) do
+ActiveRecord::Schema.define(version: 2021_06_10_131827) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "row", null: false
@@ -58,24 +58,6 @@ ActiveRecord::Schema.define(version: 2021_06_11_155748) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["container_type_id"], name: "index_containers_on_container_type_id"
-  end
-
-  create_table "item_types", force: :cascade do |t|
-    t.integer "format_type_id"
-    t.string "format_type_class"
-    t.integer "container_type_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["container_type_id"], name: "index_item_types_on_container_type_id"
-  end
-
-  create_table "items", force: :cascade do |t|
-    t.integer "format_id"
-    t.string "format_class"
-    t.integer "container_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["container_id"], name: "index_items_on_container_id"
   end
 
   create_table "physical_states", force: :cascade do |t|
@@ -148,8 +130,6 @@ ActiveRecord::Schema.define(version: 2021_06_11_155748) do
   add_foreign_key "collection_items", "single_items"
   add_foreign_key "collections", "collection_types"
   add_foreign_key "containers", "container_types"
-  add_foreign_key "item_types", "container_types"
-  add_foreign_key "items", "containers"
   add_foreign_key "sample_compositions", "sample_composition_types"
   add_foreign_key "samples", "sample_types"
   add_foreign_key "single_item_types", "sample_types"

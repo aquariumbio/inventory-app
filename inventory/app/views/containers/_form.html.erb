@@ -26,6 +26,16 @@
     <%= form.collection_select(:container_type_id, ContainerType.all, :id, :name) %>
   </div>
 
+  <div class="field">
+    <%= form.label :format_id %>
+    <%= form.number_field :format_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :format_type %>
+    <%= form.text_field :format_type %>
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>

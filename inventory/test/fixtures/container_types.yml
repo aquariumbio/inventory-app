@@ -3,9 +3,13 @@
 one:
   name: MyString
   description: MyText
-  size: MyString
+  max_quantity: MyString
+  format_type: one
+  format_type_type: SingleItemType
 
 two:
   name: MyString
   description: MyText
-  size: MyString
+  max_quantity: MyString
+  format_type: one
+  format_type_type: CollectionType

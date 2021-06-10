@@ -17,7 +17,7 @@ class ContainerTypesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create container_type" do
     assert_difference('ContainerType.count') do
-      post container_types_url, params: { container_type: { description: @container_type.description, name: @container_type.name, size: @container_type.size } }
+      post container_types_url, params: { container_type: { description: @container_type.description, name: @container_type.name, max_quantity: @container_type.max_quantity, format_type_id: @container_type.format_type_id, format_type_type: @container_type.format_type_type } }
     end
 
     assert_redirected_to container_type_url(ContainerType.last)
@@ -34,7 +34,7 @@ class ContainerTypesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update container_type" do
-    patch container_type_url(@container_type), params: { container_type: { description: @container_type.description, name: @container_type.name, size: @container_type.size } }
+    patch container_type_url(@container_type), params: { container_type: { description: @container_type.description, name: @container_type.name, max_quantity: @container_type.max_quantity, format_type_id: @container_type.format_type_id, format_type_type: @container_type.format_type_type } }
     assert_redirected_to container_type_url(@container_type)
   end
 
