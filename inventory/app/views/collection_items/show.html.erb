@@ -1,6 +1,16 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Collection:</strong>
+  <%= "#{@collection_item.collection_id}: #{@collection_item.collection.collection_type.name}" %>
+</p>
+
+<p>
+  <strong>Single item:</strong>
+  <%= "#{@collection_item.single_item_id}: #{@collection_item.single_item.sample.name}" %>
+</p>
+
+<p>
   <strong>Row:</strong>
   <%= @collection_item.row %>
 </p>
@@ -8,16 +18,6 @@
 <p>
   <strong>Column:</strong>
   <%= @collection_item.column %>
-</p>
-
-<p>
-  <strong>Collection:</strong>
-  <%= @collection_item.collection_id %>
-</p>
-
-<p>
-  <strong>Single item:</strong>
-  <%= @collection_item.single_item_id %>
 </p>
 
 <%= link_to 'Edit', edit_collection_item_path(@collection_item) %> |

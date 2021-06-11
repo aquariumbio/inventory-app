@@ -5,7 +5,7 @@
 <table>
   <thead>
     <tr>
-      <th>Item</th>
+      <th>Single item</th>
       <th>Physical state</th>
       <th colspan="3"></th>
     </tr>
@@ -14,7 +14,7 @@
   <tbody>
     <% @single_items_physical_states.each do |single_items_physical_state| %>
       <tr>
-        <td><%= single_items_physical_state.single_item_id %></td>
+        <td><%= "#{single_items_physical_state.single_item_id}: #{single_items_physical_state.single_item.sample.name}" %></td>
         <td><%= single_items_physical_state.physical_state.name %></td>
         <td><%= link_to 'Show', single_items_physical_state %></td>
         <td><%= link_to 'Edit', edit_single_items_physical_state_path(single_items_physical_state) %></td>

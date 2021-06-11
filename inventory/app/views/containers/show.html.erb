@@ -1,6 +1,21 @@
 <p id="notice"><%= notice %></p>
 
 <p>
+  <strong>Container type:</strong>
+  <%= @container.container_type.name %>
+</p>
+
+<p>
+  <strong>Format type:</strong>
+  <%= @container.format_type %>
+</p>
+
+<p>
+  <strong>Format ID:</strong>
+  <%= @container.format_id %>
+</p>
+
+<p>
   <strong>Quantity:</strong>
   <%= @container.quantity %>
 </p>
@@ -8,11 +23,6 @@
 <p>
   <strong>Location:</strong>
   <%= @container.location %>
-</p>
-
-<p>
-  <strong>Container type:</strong>
-  <%= @container.container_type_id %>
 </p>
 
 <%= link_to 'Edit', edit_container_path(@container) %> |

@@ -15,5 +15,15 @@
   <%= @container_type.max_quantity %>
 </p>
 
+<p>
+  <strong>Format type type:</strong>
+  <%= @container_type.format_type_type %>
+</p>
+
+<p>
+  <strong>Format type ID:</strong>
+  <%= @container_type.format_type_id %>
+</p>
+
 <%= link_to 'Edit', edit_container_type_path(@container_type) %> |
 <%= link_to 'Back', container_types_path %>

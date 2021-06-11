@@ -27,13 +27,13 @@
   </div>
 
   <div class="field">
-    <%= form.label :format_type_id %>
-    <%= form.number_field :format_type_id %>
+    <%= form.label :format_type_type %>
+    <%= form.select(:format_type_type, %w(SingleItemType CollectionType)) %>
   </div>
 
   <div class="field">
-    <%= form.label :format_type_type %>
-    <%= form.text_field :format_type_type %>
+    <%= form.label :format_type_id %>
+    <%= form.number_field :format_type_id %>
   </div>
 
   <div class="actions">
