@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_09_210739) do
+ActiveRecord::Schema.define(version: 2021_06_11_155748) do
 
   create_table "collection_items", force: :cascade do |t|
-    t.integer "row"
-    t.integer "column"
+    t.integer "row", null: false
+    t.integer "column", null: false
     t.integer "collection_id", null: false
     t.integer "single_item_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -24,32 +24,36 @@ ActiveRecord::Schema.define(version: 2021_06_09_210739) do
   end
 
   create_table "collection_types", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
+    t.integer "rows", null: false
+    t.integer "columns", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "rows"
-    t.integer "columns"
   end
 
   create_table "collections", force: :cascade do |t|
+    t.integer "collection_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "collection_type_id"
     t.index ["collection_type_id"], name: "index_collections_on_collection_type_id"
   end
 
   create_table "container_types", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
-    t.string "size"
+    t.string "max_quantity"
+    t.integer "format_type_id", null: false
+    t.string "format_type_type", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "containers", force: :cascade do |t|
-    t.text "quantity"
-    t.text "location"
+    t.string "quantity"
+    t.string "location"
+    t.integer "format_id", null: false
+    t.string "format_type", null: false
     t.integer "container_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -58,7 +62,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_210739) do
 
   create_table "item_types", force: :cascade do |t|
     t.integer "format_type_id"
-    t.string "format_type_type"
+    t.string "format_type_class"
     t.integer "container_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -67,7 +71,7 @@ ActiveRecord::Schema.define(version: 2021_06_09_210739) do
 
   create_table "items", force: :cascade do |t|
     t.integer "format_id"
-    t.string "format_type"
+    t.string "format_class"
     t.integer "container_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -75,14 +79,14 @@ ActiveRecord::Schema.define(version: 2021_06_09_210739) do
   end
 
   create_table "physical_states", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "sample_composition_types", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.text "recipe"
     t.datetime "created_at", precision: 6, null: false
@@ -91,8 +95,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_210739) do
 
   create_table "sample_compositions", force: :cascade do |t|
     t.text "quantity"
-    t.integer "composite_sample_id"
-    t.integer "component_sample_id"
+    t.integer "composite_sample_id", null: false
+    t.integer "component_sample_id", null: false
     t.integer "sample_composition_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -100,14 +104,14 @@ ActiveRecord::Schema.define(version: 2021_06_09_210739) do
   end
 
   create_table "sample_types", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "samples", force: :cascade do |t|
-    t.string "name"
+    t.string "name", null: false
     t.text "description"
     t.integer "sample_type_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -126,6 +130,8 @@ ActiveRecord::Schema.define(version: 2021_06_09_210739) do
     t.integer "sample_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "identifier"
+    t.index ["identifier"], name: "index_single_items_on_identifier", unique: true
     t.index ["sample_id"], name: "index_single_items_on_sample_id"
   end
 
