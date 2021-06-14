@@ -1,0 +1,2 @@
+module SingleItemTypesPhysicalStatesHelper
+end

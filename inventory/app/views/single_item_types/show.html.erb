@@ -5,5 +5,12 @@
   <%= @single_item_type.sample_type.name %>
 </p>
 
+<p>
+  <strong>Physical states:</strong>
+  <%= @single_item_type.physical_states.map(&:name).join(', ') %>
+</p>
+
+
+
 <%= link_to 'Edit', edit_single_item_type_path(@single_item_type) %> |
 <%= link_to 'Back', single_item_types_path %>

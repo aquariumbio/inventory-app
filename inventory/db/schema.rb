@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_06_10_131827) do
+ActiveRecord::Schema.define(version: 2021_06_14_132454) do
 
   create_table "collection_items", force: :cascade do |t|
     t.integer "row", null: false
@@ -108,6 +108,15 @@ ActiveRecord::Schema.define(version: 2021_06_10_131827) do
     t.index ["sample_type_id"], name: "index_single_item_types_on_sample_type_id"
   end
 
+  create_table "single_item_types_physical_states", force: :cascade do |t|
+    t.integer "single_item_type_id", null: false
+    t.integer "physical_state_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["physical_state_id"], name: "index_single_item_types_physical_states_on_physical_state_id"
+    t.index ["single_item_type_id"], name: "index_single_item_types_physical_states_on_single_item_type_id"
+  end
+
   create_table "single_items", force: :cascade do |t|
     t.integer "sample_id", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -133,6 +142,8 @@ ActiveRecord::Schema.define(version: 2021_06_10_131827) do
   add_foreign_key "sample_compositions", "sample_composition_types"
   add_foreign_key "samples", "sample_types"
   add_foreign_key "single_item_types", "sample_types"
+  add_foreign_key "single_item_types_physical_states", "physical_states"
+  add_foreign_key "single_item_types_physical_states", "single_item_types"
   add_foreign_key "single_items", "samples"
   add_foreign_key "single_items_physical_states", "physical_states"
   add_foreign_key "single_items_physical_states", "single_items"

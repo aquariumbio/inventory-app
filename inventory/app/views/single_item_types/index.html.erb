@@ -6,6 +6,7 @@
   <thead>
     <tr>
       <th>Sample type</th>
+      <th>Physical states</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -14,6 +15,7 @@
     <% @single_item_types.each do |single_item_type| %>
       <tr>
         <td><%= single_item_type.sample_type.name %></td>
+        <td><%= single_item_type.physical_states.map(&:name).join(', ') %></td>
         <td><%= link_to 'Show', single_item_type %></td>
         <td><%= link_to 'Edit', edit_single_item_type_path(single_item_type) %></td>
         <td><%= link_to 'Destroy', single_item_type, method: :delete, data: { confirm: 'Are you sure?' } %></td>
