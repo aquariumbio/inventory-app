@@ -1,4 +1,4 @@
-# Inventory prototype
+# Inventory prototype (Rails)
 
 Based on https://github.com/microsoft/vscode-dev-containers/tree/main/containers/ruby-rails
 
